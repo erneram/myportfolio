@@ -1,0 +1,19 @@
+{
+  "name": "myportfolio",
+  "packageManager": "yarn@4.7.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.0.0",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitejs/plugin-vue-jsx": "^4.1.2",
+    "vite": "^3.0.0",
+    "vite-plugin-vue-devtools": "^7.7.2"
+  }
+}
