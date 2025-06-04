@@ -1,15 +1,8 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="flex flex-col justify-center items-center align-center  h-screen items-center">
+    <card-about-me />
   </div>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import CardAboutMe from '@components/aboutMeComponents/CardAboutMe.vue'
+</script>

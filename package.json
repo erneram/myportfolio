@@ -1,19 +1,27 @@
 {
   "name": "myportfolio",
-  "packageManager": "yarn@4.7.0",
+  "packageManager": "yarn@1.22.2",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
+    "gsap": "^3.13.0",
+    "heroicons": "^2.2.0",
+    "three": "^0.177.0",
     "vue": "^3.0.0",
     "vue-router": "4"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.2.3",
-    "@vitejs/plugin-vue-jsx": "^4.1.2",
-    "vite": "^3.0.0",
-    "vite-plugin-vue-devtools": "^7.7.2"
+    "@vitejs/plugin-vue": "^5.2.4",
+    "@vitejs/plugin-vue-jsx": "^4.2.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.3.5",
+    "vite-plugin-vue-devtools": "^7.7.6"
   }
 }
