@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         Playfair_Display: ['"Playfair Display"', 'Italic'],
         Lora: ['"Lora"', 'Italic'],
+        Nunito: ['"Nunito"', 'Italic'],
+        Yeseva: ['"Yeseva"', 'Italic'],
+        Josefin: ['"Josefin Sans"', 'Italic'],
       },
       cursor: {
         Fancy: 'url(/cursor.png), default',

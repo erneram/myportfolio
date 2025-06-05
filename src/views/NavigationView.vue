@@ -5,22 +5,22 @@
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
-            class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+            class="absolute inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
             <span class="absolute -inset-0.5" />
             <span class="sr-only">Open main menu</span>
             <Bars3Icon v-if="!open" class="block size-6" aria-hidden="true" />
             <XMarkIcon v-else class="block size-6" aria-hidden="true" />
           </DisclosureButton>
         </div>
-        <div class="flex flex-1 items-center justify-end sm:items-stretch sm:justify-between">
+        <div class="fixed flex flex-1 items-center justify-end sm:items-stretch sm:justify-between">
           <div class="flex shrink-0 items-center">
             <img class="h-8 w-auto" size="256x256" src="/icon.png"
               alt="Your Company" />
           </div>
           <div class="hidden sm:ml-6 sm:block sm:justify-end">
             <div class="flex space-x-4 overflow-hidden">
-              <a v-for="item in navigation" :key="item.name" :href="item.href"
-                :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']"
+              <a v-for="item in navigation" :key="item.name" @click="scrollToSection(item.href)"
+                :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium cursor-pointer']"
                 :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
             </div>
           </div>
@@ -44,13 +44,17 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-console.log(route.path)
+const emit = defineEmits(['scrollTo'])
+
+function scrollToSection(section){
+  emit('scrollTo', section)
+}
 
 const navigation = [
-  { name: 'Home', href: '/home', current: route.path === '/home' ? true : false },
-  { name: 'About me', href: '/about', current: route.path === '/about' ? true : false },
-  { name: 'Projects', href: '/projects', current: route.path === '/projects' ? true : false },
-  { name: 'Skills', href: '/skills', current: route.path === '/skills' ? true : false },
-  { name: 'Contact', href: '/contact', current: route.path === '/contact' ? true : false },
+  { name: 'Home', href: '#home', current: false },
+  { name: 'About me', href: '#about', current: false },
+  { name: 'Projects', href: '#projects', current: false },
+  { name: 'Skills', href: '#skills', current: false },
+  { name: 'Contact', href: '#contact', current: false },
 ]
 </script>

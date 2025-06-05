@@ -1,7 +1,17 @@
 <script setup>
-import NavigationView from './views/NavigationView.vue'
+import NavigationView from '@views/NavigationView.vue'
+import HomeView from '@views/HomeView.vue'
+import ContactMeView from '@views/ContactMeView.vue'
+import ProjectsView from '@views/ProjectsView.vue'
+import SkillsView from '@views/SkillsView.vue'
+import AboutView from '@views/AboutView.vue'
+
 import { onMounted, onUnmounted, ref } from 'vue'
+import { gsap } from 'gsap'
 import { RouterLink, RouterView } from 'vue-router'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+
+gsap.registerPlugin(ScrollToPlugin)
 import * as THREE from 'three'
 
 const container = ref(null)
@@ -94,6 +104,21 @@ function onWindowResize() {
   camera.updateProjectionMatrix()
   renderer.setSize(window.innerWidth, window.innerHeight)
 }
+
+function handleScrollTo(sectionId) {
+  const element = document.querySelector(sectionId) // ej: "#about"
+  if (element) {
+    gsap.to(window, {
+      duration: 1,
+      scrollTo: {
+        y: element,
+        offsetY: 70, // ajusta según el alto del nav
+      },
+      ease: 'power2.inOut',
+    })
+  }
+}
+
 </script>
 
 <template>
@@ -102,10 +127,19 @@ function onWindowResize() {
 
   <!-- Contenido -->
   <header>
-    <navigation-view />
+    <navigation-view @scrollTo="handleScrollTo"/>
   </header>
-  <main>
-    <RouterView />
+  <main class="">
+    <!-- <RouterView /> -->
+    <div class="scroll-smooth">
+      <home-view id="home"/>
+      <about-view id="about"/>
+      <skills-view id="skills"/>
+      <projects-view id="projects"/>
+      <contact-me-view id="contact"/>
+
+    </div>
   </main>
+
 </template>
 
