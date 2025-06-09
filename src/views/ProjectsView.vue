@@ -20,7 +20,7 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 import { gsap } from 'gsap'
-import Card from '@components/projectsComponents/cardProjects.vue'
+import Card from '@components/projectsComponents/CardProjects.vue'
 
 const sliderContainer = ref(null)
 const count = ref(0)
