@@ -1,7 +1,8 @@
 <template>
   <div v-if="verse" class="flex flex-col justify-center items-center">
-    <h2 class="text-white text-4xl font-Josefin">{{ verse.ref }}</h2>
-    <p class="text-white text-2xl font-Yeseva tracking-widest">{{ verse.text }}</p>
+    <h2 class="text-white sm:text-2xl xl:text-4xl font-Josefin">{{ verse.ref }}</h2>
+    <p class="text-white sm:text-2xl xl:text-2xl font-Yeseva tracking-widest items-center text-center">{{ verse.text }}
+    </p>
   </div>
 </template>
 <script setup>

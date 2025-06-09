@@ -31,7 +31,7 @@ function init() {
   camera.position.z = 1
   camera.rotation.x = Math.PI / 2
 
-  renderer = new THREE.WebGLRenderer({ alpha: false }) // alpha true para fondo transparente
+  renderer = new THREE.WebGLRenderer({ alpha: true }) // alpha true para fondo transparente
   renderer.setSize(window.innerWidth, window.innerHeight)
   container.value.appendChild(renderer.domElement)
 
@@ -123,20 +123,20 @@ function handleScrollTo(sectionId) {
 
 <template>
   <!-- Fondo canvas -->
-  <div ref="container" class="fixed bg-black top-0 left-0 w-screen h-screen -z-10 overflow-hidden"></div>
+  <div ref="container" class="fixed bg-[#020303] top-0 left-0 w-screen h-screen -z-10 overflow-hidden"></div>
 
   <!-- Contenido -->
   <header>
-    <navigation-view @scrollTo="handleScrollTo"/>
+    <navigation-view @scrollTo="handleScrollTo" />
   </header>
   <main class="">
     <!-- <RouterView /> -->
     <div class="scroll-smooth">
-      <home-view id="home"/>
-      <about-view id="about"/>
-      <skills-view id="skills"/>
-      <projects-view id="projects"/>
-      <contact-me-view id="contact"/>
+      <home-view id="home" />
+      <about-view id="about" />
+      <skills-view id="skills" />
+      <projects-view id="projects" />
+      <contact-me-view id="contact" />
 
     </div>
   </main>

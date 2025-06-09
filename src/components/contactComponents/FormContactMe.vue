@@ -33,7 +33,7 @@
                     </div>
                     <div class="mt-8 flex justify-end">
                          <button type="submit"
-                              class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-indigo-600">Send
+                              class="rounded-xl bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus:outline focus:outline-2 focus:outline-indigo-600">Send
                               message</button>
                     </div>
                </div>
