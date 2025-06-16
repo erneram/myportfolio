@@ -19,7 +19,7 @@
           </div>
           <div class="hidden sm:ml-6 sm:block sm:justify-end">
             <div class="flex space-x-4 overflow-hidden">
-              <a v-for="item in navigation" :key="item.name" @click="scrollToSection(item.href)"
+              <a v-for="item in navigation" :key="item.name" @click="e => scrollToSection(item.href)"
                 :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium cursor-pointer']"
                 :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
             </div>
@@ -42,12 +42,27 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
 import { useRoute } from 'vue-router'
+import gsap from 'gsap'
 
 const route = useRoute()
 const emit = defineEmits(['scrollTo'])
 
 function scrollToSection(section){
-  emit('scrollTo', section)
+  window.history.pushState({}, "", section); 
+  const element = document.getElementById(section.slice(1))
+  if(!element) {
+    console.warn("Element not found for id " + section)
+    return
+  }
+
+  gsap.to(window, {
+    duration: 1,
+    scrollTo: {
+      y: element,
+      offsetY: 70, // ajusta según el alto del nav
+    },
+    ease: 'power2.inOut',
+  })
 }
 
 const navigation = [

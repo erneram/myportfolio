@@ -10,8 +10,6 @@ import { onMounted, onUnmounted, ref } from 'vue'
 import { gsap } from 'gsap'
 import { RouterLink, RouterView } from 'vue-router'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-
-gsap.registerPlugin(ScrollToPlugin)
 import * as THREE from 'three'
 
 const container = ref(null)
