@@ -73,12 +73,4 @@ const navigation = [
   { name: 'Contact', href: '#contact', current: false },
 ]
 
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
-console.log("Testing pull request with changes")
 </script>
