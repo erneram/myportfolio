@@ -1,10 +1,15 @@
+<script setup lang="ts">
+/**
+ * @view SkillsView
+ * Skills section showing languages and technologies
+ */
+
+import { LanguagesSkills, TechnologiesSkills } from '@/components/skills'
+</script>
+
 <template>
   <div>
-    <languages-skills />
-    <tecnologies-skills />
+    <LanguagesSkills />
+    <TechnologiesSkills />
   </div>
 </template>
-<script setup>
-import LanguagesSkills from '@/components/skillsComponents/LanguagesSkills.vue';
-import TecnologiesSkills from '@/components/skillsComponents/TecnologiesSkills.vue';
-</script>
