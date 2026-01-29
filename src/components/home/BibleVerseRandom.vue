@@ -12,10 +12,6 @@ const { t } = useLocale()
 
 <template>
   <div class="flex flex-col justify-center items-center">
-    <h2 class="text-white text-xl sm:text-2xl xl:text-3xl font-Josefin mb-4">
-      {{ t('home.bibleVerse.title') }}
-    </h2>
-    
     <div 
       v-if="verse" 
       class="text-center"

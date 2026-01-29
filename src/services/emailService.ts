@@ -39,9 +39,10 @@ export async function sendContactEmail(
 
     // Transform form data to template params
     const templateParams = {
-      subject: formData.title,
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      from_email: formData.email,
+      title: formData.title,
+      name: formData.firstName,
+      lastname: formData.lastName,
+      email: formData.email,
       message: formData.message,
       to_name: 'Ernesto Ascencio', // Your name
       reply_to: formData.email,

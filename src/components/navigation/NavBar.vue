@@ -127,9 +127,9 @@ function toggleLanguage(): void {
               :title="currentLocale === 'en' ? 'Switch to Spanish' : 'Cambiar a Inglés'"
             >
               <img 
-                :src="currentLocale === 'en' ? '/spain.png' : '/united-states.png'"
-                :alt="currentLocale === 'en' ? 'Spanish Flag' : 'US Flag'"
-                class="w-6 h-4 object-cover rounded-sm shadow-sm"
+                :src="currentLocale === 'en' ? '/united-states.png' : '/spain.png'"
+                :alt="currentLocale === 'en' ? 'US Flag' : 'Spanish Flag'"
+                class="w-8 h-auto object-cover rounded-sm shadow-sm"
               />
             </button>
           </div>
