@@ -43,11 +43,11 @@ function handleScrollTo(sectionId: SectionId): void {
   
   <main>
     <div class="scroll-smooth">
-      <HomeView id="home" />
-      <AboutView id="about" />
-      <SkillsView id="skills" />
-      <ProjectsView id="projects" />
-      <ContactMeView id="contact" />
+      <HomeView id="home" class="pt-16" />
+      <AboutView id="about" class="pt-16" />
+      <SkillsView id="skills" class="pt-16" />
+      <ProjectsView id="projects" class="pt-16" />
+      <ContactMeView id="contact" class="pt-16" />
     </div>
   </main>
 </template>
